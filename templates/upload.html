@@ -1,25 +1,38 @@
-<!doctype html>
-<title>Python Flask File Upload Example</title>
-<h2>Select a file to upload</h2>
-<p>
-	{% with messages = get_flashed_messages() %}
-	  {% if messages %}
-		<ul class=flashes>
-		{% for message in messages %}
-		  <li>{{ message }}</li>
-		{% endfor %}
-		</ul>
-	  {% endif %}
-	{% endwith %}
-</p>
 
-<form method="post" action="/api/file-upload" enctype="multipart/form-data">
-    <dl>
-		<p>
-			<input type="file" name="file" autocomplete="off" required>
-		</p>
-    </dl>
-    <p>
-		<input type="submit" value="Submit">
-	</p>
-</form>
+<!DOCTYPE html>
+<html >
+
+<head>
+  <meta charset="UTF-8">
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+
+<center>
+<div class="login">
+
+<h1> Upload Image To Machine Learning Model</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form method="post" action="/api/file-upload" enctype="multipart/form-data">
+    	<div id="id">Please select image of the leaf: </div><br><br>
+        <input type="file" name="file" autocomplete="off" required>
+        <br><br>
+        <input class="btn btn-primary btn-block btn-large" type="submit" value="Upload to server" />
+
+    </form>
+
+   <br>
+   <br>
+<h3>
+<h1>
+<h1>
+</h3>
+
+</div>
+<center>
+

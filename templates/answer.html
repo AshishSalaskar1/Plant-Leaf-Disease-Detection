@@ -1,19 +1,38 @@
-<!doctype html>
-<title>Python Flask File Upload Example</title>
-<h2>Select a file to upload</h2>
-<p>
-	{% with messages = get_flashed_messages() %}
-	  {% if messages %}
-		<ul class=flashes>
-		{% for message in messages %}
-		  <li>{{ message }}</li>
-		{% endfor %}
-		</ul>
-	  {% endif %}
-	{% endwith %}
-</p>
 
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+
+<center>
+<div class="login">
+
+<h1> Result</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form method="post">
+    	
+        The Predicted Disease of the leaf is: 
+                <span style="font-size:28px;">{{answer}}</span><br><br>
+        <button type="submit" class="btn btn-primary btn-block btn-large">Check for medicines</button>
+
+    </form>
+
+   <br>
+   <br>
+<h3>
 <h1>
+<h1>
+</h3>
 
-{{answer}}
-</h1>
+</div>
+<center>
