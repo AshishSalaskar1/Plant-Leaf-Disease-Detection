@@ -1,8 +1,9 @@
 
 UPLOAD_FOLDER = 'uploads/'
 from tensorflow.keras.models import load_model
+import matplotlib.pylab as plt
 import numpy as np
-import cv2
+# import cv2
 from skimage.transform import resize
 from keras.backend import clear_session
 
@@ -12,7 +13,7 @@ categories=['Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot','Corn_(maize)__
 
 
 def getPrediction():
-    img = cv2.imread('uploads/test.jpg')
+    img = plt.imread('uploads/test.jpg')
     resImage = resize(img,(28,28))
     model = load_model('model.h5')
     model._make_predict_function()
