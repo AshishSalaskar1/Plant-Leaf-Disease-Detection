@@ -5,7 +5,7 @@ import matplotlib.pylab as plt
 import numpy as np
 # import cv2
 from skimage.transform import resize
-from keras.backend import clear_session
+# from keras.backend import clear_session
 
 categories=['Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot','Corn_(maize)___Common_rust_','Corn_(maize)___healthy','Peach___Bacterial_spot','Peach___healthy']
  
