@@ -11,5 +11,4 @@ matplotlib>=1.4.3
 pandas>=0.24.2
 tensorflow==1.14.0
 scikit-image==0.15.0
-opencv-contrib-python==4.1.1.26 
 opencv-python==4.1.1.26 
