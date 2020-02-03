@@ -9,6 +9,8 @@ from keras.backend import clear_session
 categories=['Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot','Corn_(maize)___Common_rust_','Corn_(maize)___healthy','Peach___Bacterial_spot','Peach___healthy']
  
 
+
+
 def getPrediction():
     img = cv2.imread('uploads/test.jpg')
     resImage = resize(img,(28,28))
@@ -26,10 +28,10 @@ def getPrediction():
 
 import os
 import urllib.request
-from flask import Flask, request, redirect, jsonify
+from flask import Flask, request, redirect, jsonify, render_template
 from werkzeug.utils import secure_filename
 
-app = Flask(__name__)
+app = Flask(__name__,static_url_path="/static")
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
@@ -47,12 +49,19 @@ def allowed_file(filename):
 #     file = request.files['file']
 #     file.save("static/test.jpg")
 #     return "file successfully saved"
-@app.route('/api/test', methods=['GET'])
-def get_tasks():
-    # getPrediction()
-    return jsonify({'tasks': "nothinf"})
+@app.route('/home')
+def upload_form():
+	return render_template('upload.html')
 
-@app.route('/api/file-upload', methods=['POST'])
+
+@app.route('/', methods=['GET'])
+def home():
+    return app.send_static_file('index.html')
+
+
+
+
+@app.route('/api/file-upload', methods=['GET', 'POST'])
 def upload_file():
 	# check if the post request has the file part
     if 'file' not in request.files:
@@ -69,8 +78,9 @@ def upload_file():
         filename = "test.jpg"
         file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
 
+        return render_template('answer.html', answer=getPrediction())
         
-        resp = jsonify({'message' :getPrediction()})
+        # resp = jsonify({'message' :getPrediction()})
         # resp = jsonify({'message' : getPrediction()})
         resp.status_code = 201
         return resp
