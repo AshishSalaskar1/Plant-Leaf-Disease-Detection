@@ -21,6 +21,7 @@ from tensorflow.keras.utils import to_categorical
 import numpy as np
 import matplotlib.pyplot as plt
 import os
+from numpy import load
 # import cv2
 
 def train_model():
@@ -69,11 +70,19 @@ def train_model():
 
 
 
-    create_training_data()
-    create_testing_data()
+    # create_training_data()
+    # create_testing_data()
 
+    #load already present values
+    test_data_dict = load('test_data.npz',allow_pickle=True)
+    test_data = test_data_dict['arr_0']
+    testing_data = test_data[0]
 
+    train_data_dict = load('train_data.npz',allow_pickle=True)
+    train_data = train_data_dict['arr_0']
+    training_data = train_data[0]
 
+    ##################Loading done
 
     train_X=[]
     train_Y=[]
@@ -197,4 +206,4 @@ def train_model():
     return return_value
 
 
-# train_model()
+train_model()
