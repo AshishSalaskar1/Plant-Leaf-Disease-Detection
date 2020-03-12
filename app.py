@@ -33,8 +33,10 @@ from werkzeug.utils import secure_filename
 
 
 app = Flask(__name__,static_url_path="/static")
-cors = CORS(app)
+# cors = CORS(app)
+
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+cors = CORS(app, resources={r"/train": {"origins": "http://localhost:5500"}})
 
 ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
 
@@ -51,6 +53,9 @@ def upload_form():
 def train_form():
     return_metrics = train_model()
     return jsonify(return_metrics)
+    # response = jsonify(return_metrics)
+    # response.headers.add('Access-Control-Allow-Origin', '*')
+    # return response
 
 
 
