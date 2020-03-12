@@ -36,7 +36,7 @@ app = Flask(__name__,static_url_path="/static")
 # cors = CORS(app)
 
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-cors = CORS(app, resources={r"/train": {"origins": "http://localhost:5500"}})
+cors = CORS(app, resources={r"/train": {"origins": "https://plantdiseasetrain.herokuapp.com"}})
 
 ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
 
