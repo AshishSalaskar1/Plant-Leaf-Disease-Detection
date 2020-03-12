@@ -74,3 +74,4 @@ def create_testing_data():
 # dict_data = load('data.npz',allow_pickle=True)
 # data = dict_data['arr_0']
 # print(data[0])
+#s
