@@ -18,7 +18,7 @@ def train_model():
 
 def getPrediction():
     img = plt.imread('uploads/test.jpg')
-    resImage = resize(img,(28,28))
+    resImage = resize(img,(28,28,3))
     model = load_model('model.h5')
     model._make_predict_function()
     prob = model.predict(np.array([resImage],))
@@ -33,10 +33,11 @@ from werkzeug.utils import secure_filename
 
 
 app = Flask(__name__,static_url_path="/static")
+
 # cors = CORS(app)
 
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-cors = CORS(app, resources={r"/train": {"origins": "https://plantdiseasetrain.herokuapp.com"}})
+cors = CORS(app, resources={r"/train": {"origins": "https://cnn-flask.herokuapp.com/home"}})
 
 ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
 
@@ -82,10 +83,12 @@ def home():
 def upload_file():
 	# check if the post request has the file part
     if 'file' not in request.files:
+        #return render_template('./CCR/index.html')
         resp = jsonify({'message' : 'No file part in the request'})
         resp.status_code = 400
         return resp
     file = request.files['file']
+    
     if file.filename == '':
         resp = jsonify({'message' : 'No file selected for uploading'})
         resp.status_code = 400

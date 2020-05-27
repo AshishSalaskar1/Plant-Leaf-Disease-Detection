@@ -3,6 +3,21 @@
 <html >
 <!--From https://codepen.io/frytyler/pen/EGdtg-->
 <head>
+  <style>
+    #button {
+      
+  background-color: #008CBA; 
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+
+
+    }
+    </style>
   <meta charset="UTF-8">
   <title>ML API</title>
   <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
@@ -10,29 +25,70 @@
 <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
   
 </head>
 
-<center>
-<div class="login">
+<body>
+    <center>
+        <div class="login">
+        
+        <h1> Result</h1>
+        
+             <!-- Main Input For Receiving Query to our ML 
+            <button >
+                            <a href = " {{ url_for('static', filename='CCR/index.html') }}" style = "text-decoration: none;" id ='button'>Check for Pesticides</a>
+                        </button>
+            -->
+            <form method="post">
+              
+                The Predicted Disease of the leaf is: 
+                        <span style="font-size:28px;">{{answer}}</span><br><br>
+                        <button id="but">
+                            <a  href =" google.com " style = "text-decoration: none;" id ="button">Check for Pesticides</a>
+                        </button>
+               
+        
+            </form>
+        
+           <br>
+           <br>
+        <h3>
+        <h1>
+        <h1>
+        </h3>
+        
+        </div>
+        <center>
 
-<h1> Result</h1>
+            <script type="text/javascript">
 
-     <!-- Main Input For Receiving Query to our ML -->
-    <form method="post">
-    	
-        The Predicted Disease of the leaf is: 
-                <span style="font-size:28px;">{{answer}}</span><br><br>
-        <button type="submit" class="btn btn-primary btn-block btn-large">Check for medicines</button>
+              let gls = 'Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot'
+              let ccr = 'Corn_(maize)___Common_rust_'
+              let pbs = 'Peach___Bacterial_spot'
+              let ans = '{{answer}}'
+              if(!gls.localeCompare(ans)){
+                document.getElementById("button").href = "{{ url_for('static', filename='GLS/index.html') }}";
+              }
+              
+              else if(!ccr.localeCompare(ans)){
+                document.getElementById("button").href = "{{ url_for('static', filename='CCR/index.html') }}";
+              }
+              
+              else if(!pbs.localeCompare(ans)){
+                
+                document.getElementById("button").href = "{{ url_for('static', filename='PBS/index.html') }}";
+                
+                
+              }else{
+                document.getElementById("but").style.visibility="hidden"
+              }
+              
+              
+              
+            
+            </script>
+  
+</body>
 
-    </form>
-
-   <br>
-   <br>
-<h3>
-<h1>
-<h1>
-</h3>
-
-</div>
-<center>
+    

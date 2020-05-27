@@ -1,0 +1,147 @@
+.col {
+  float: left;
+  width: 50%;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.row {
+  display: flex;
+}
+
+.col {
+  flex: 50%;
+}
+
+.p1 {
+  letter-spacing: 0.1px;
+  border-style: solid;
+  border-color: blue;
+  top: 0%;
+}
+
+.p1 {
+  position: relative;
+  /*padding-bottom: 40%;*/
+}
+
+span {
+  color: #00565b;
+}
+
+.row::-webkit-scrollbar {
+  display: none;
+}
+
+.col {
+  height: 100%;
+}
+
+.text-center {
+  position: relative;
+  height: 100%;
+  left: 10%;
+  /*border-style: solid;*/
+  /*border-color: blue;*/
+  /*border-style: solid;*/
+  /*border-color: blue;*/
+}
+
+.text-center.mydiv {
+  position: relative;
+  left: 0%;
+}
+
+div {
+  height: 100%;
+}
+
+[type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
+  position: relative;
+  left: 20%;
+}
+
+[type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
+  position: relative;
+  left: 0%;
+}
+
+#b2 {
+  position: relative;
+  left: 10%;
+}
+
+[type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
+}
+
+#b1 {
+  position: relative;
+  left: 10%;
+}
+
+img {
+  position: relative;
+  height: 40%;
+  width: 40%;
+}
+
+img {
+  position: relative;
+  height: 40%;
+  width: 40%;
+}
+
+.navbar-expand .navbar-nav {
+  position: relative;
+}
+
+.navbar-expand .navbar-nav {
+  position: relative;
+}
+
+.navbar.navbar-light.navbar-expand-md {
+  position: relative;
+}
+
+img {
+  position: relative;
+  bottom: 15px;
+  padding-bottom: 10px;
+  padding-left: 5px;
+  height: 166.656px;
+  left: 10;
+  width: 125px;
+}
+
+#img2 {
+  position: relative;
+  height: 40%;
+  width: 40%;
+}
+
+img {
+  position: relative;
+  bottom: 15px;
+  padding-bottom: 10px;
+  padding-left: 5px;
+  height: 166.656px;
+  left: 10;
+  width: 125px;
+}
+
+#img1 {
+  position: relative;
+  height: 40%;
+  width: 40%;
+}
+
+#img1 {
+  position: relative;
+  height: 40%;
+  width: 40%;
+}
+
