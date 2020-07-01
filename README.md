@@ -18,7 +18,7 @@ Method: GET
 Action: Trains the ML model and return the training metrics which can be further used for visualisation.
 
 
-| API ROUTE | Method | Actions |
+| Method | API ROUTE | Actions |
 |--|--| --|
 | GET |https://plantdiseaseash.herokuapp.com/test or https://plantdiseaseash.herokuapp.com/test  | Trains the ML model and return the training metrics which can be further used for visualisation |
 | POST |https://plantdiseaseash.herokuapp.com/predict | Image to be tested is uploaded via a POST request and the predictions are returned. |
