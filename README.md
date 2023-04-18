@@ -1,4 +1,4 @@
-## **Plant Lead Disease Detection using Machine Learning**
+## **Plant Leaf Disease Detection using Machine Learning**
 
 A system which allows the user to upload image of a plant leaf and predict if it is disease affected;
 - Demo Video - Web Application:  https://drive.google.com/file/d/1X38fXQnTdRsdOka1jJW9CoURDNNgc_V5/view?usp=sharing
