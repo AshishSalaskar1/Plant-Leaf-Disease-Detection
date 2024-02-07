@@ -6,21 +6,21 @@ import numpy as np
 # import cv2
 from skimage.transform import resize
 from flask_cors import CORS, cross_origin
-import model_train
+# import model_train
 # from keras.backend import clear_session
 
 categories=['Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot','Corn_(maize)___Common_rust_','Corn_(maize)___healthy','Peach___Bacterial_spot','Peach___healthy']
  
 
-def train_model():
-    return_metrics = model_train.train_model()
-    return return_metrics
+# def train_model():
+#     return_metrics = model_train.train_model()
+#     return return_metrics
 
 def getPrediction():
     img = plt.imread('uploads/test.jpg')
     resImage = resize(img,(28,28,3))
     model = load_model('model.h5')
-    model._make_predict_function()
+    model.make_predict_function()
     prob = model.predict(np.array([resImage],))
     sortProb = np.argsort(prob[0,:])
     return categories[sortProb[-1]]
@@ -49,11 +49,11 @@ def allowed_file(filename):
 def upload_form():
 	return render_template('upload.html')
 
-@app.route('/train')
-@cross_origin()
-def train_form():
-    return_metrics = train_model()
-    return jsonify(return_metrics)
+# @app.route('/train')
+# @cross_origin()
+# def train_form():
+#     return_metrics = train_model()
+#     return jsonify(return_metrics)
     # response = jsonify(return_metrics)
     # response.headers.add('Access-Control-Allow-Origin', '*')
     # return response
