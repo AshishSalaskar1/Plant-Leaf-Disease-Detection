@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
-<body style="height: 100%;width: 100%;">
+<body style="width: 100%;">
     <nav class="navbar navbar-light navbar-expand" style="color: rgb(234,221,221);width: 100%;background-color: #282821;">
         <div class="container-fluid"><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon border rounded" style="background-color: #00b27a;color: #00b27a;"></span></button>
             <div
@@ -26,6 +26,16 @@
         </div>
         </div>
     </nav>
+    <div id="google_element">
+        Select Language: 
+        <script src="https://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate"></script>
+        
+        <script>
+            function loadGoogleTranslate(){
+                new google.translate.TranslateElement("google_element")
+            }
+        </script>
+    </div>
     <div class="col-lg-12" style="position: relative;height: 100%;top: 10%;">
         <div style="position: relative;height: 100%;wifth: 100%;width: 100%;padding-top: 5%;">
             <p class="border rounded border-dark shadow p1" style="color: #006400;position: relative;/*padding-top: 2%;*/left: 10%;/*right: 20%;*/padding-right: 5%;padding-left: 5%;padding-bottom: 2%;height: 100%;width: 80%;border-style: solid;border-color: blue;">&nbsp; &nbsp; <span class="text-left" style="position: relative;width: 100%;height: 80%;color: #b28260;font-size: 32px;right: 7%;/*padding: 2%;*/">Hybrid selection</span><br>&nbsp;<i class="fa fa-check"></i>&nbsp;Choosing corn hybrids with
@@ -43,6 +53,11 @@
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/bs-init.js"></script>
+    <script>
+        setTimeout(()=>{
+            document.querySelector('a[href="https://translate.google.com"]').style.display = "None";
+        }, 3000)
+    </script>
 </body>
 
 </html>
