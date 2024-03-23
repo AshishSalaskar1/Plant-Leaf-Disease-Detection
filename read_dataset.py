@@ -18,6 +18,7 @@ datadir1="Datasets/Testing_Dataset"
 datadir="Datasets/Training_Dataset"
 training_data=[]
 testing_data=[]
+
 categories=['Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot','Corn_(maize)___Common_rust_','Corn_(maize)___healthy','Peach___Bacterial_spot','Peach___healthy']
 
 def create_training_data():
