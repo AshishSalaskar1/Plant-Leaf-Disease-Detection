@@ -26,6 +26,16 @@
         </div>
         </div>
     </nav>
+    <div id="google_element">
+        Google Translate: 
+        <script src="http://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate"></script>
+        
+        <script>
+            function loadGoogleTranslate(){
+                new google.translate.TranslateElement("google_element")
+            }
+        </script>
+    </div>
     <div class="collapse navbar-collapse" id="navcol-1">
         <ul class="nav nav-tabs">
             <li class="nav-item"><a class="nav-link active text-center border rounded" href="index.html" style="font-size: 20px;color: #00b27a;background-color: #282821;padding-right: 12px;position: relative;/*left: 5px;*/padding-top: 3px;padding-bottom: 3px;border-color: red;border-style: solid;border-color: red;width: 113.625px;">Disease</a></li>
@@ -44,6 +54,11 @@
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/bs-init.js"></script>
+    <script>
+        setTimeout(()=>{
+            document.querySelector('a[href="https://translate.google.com"]').style.display = "None";
+        }, 3000)
+    </script>
 </body>
 
 </html>
